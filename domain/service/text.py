@@ -49,7 +49,7 @@ def process_image(binarizedImg):
             segContours, segContoursDim, maxSpace, checkNumList, segPeakMids, segWidths, segAspects, widths, heights, Ys = staffRemovalNonHorizontal(rotatedImage)
 
     # Crear una estructura de datos para almacenar los resultados
-    results = {'staff_lines': [], 'symbols': []}
+    results = {'message': 'Archivo procesado con éxito', 'staff_lines': [], 'symbols': []}
 
     for i, seg in enumerate(segContours):
         staff_lines = []
@@ -115,13 +115,10 @@ def process_image(binarizedImg):
 
         # Convierte los datos de audio en una cadena base64
         #audio_base64 = base64.b64encode(audio_data.getvalue()).decode('utf-8')
+        results['staff_lines'].append(staff_lines)
+        results['symbols'].append(symbols)
 
-    results = {
-        'message': 'Archivo procesado con éxito',
-        'staff_lines': staff_lines,
-        'symbols': symbols
-        #'audio_base64': audio_base64  # Agregar el audio en formato base64 al JSON
-    }
+    print(results)
 
     return results
 
