@@ -1,0 +1,42 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Tu Aplicación Flask",
+      "version": "1.0.0",
+      "description": "API generada automáticamente por Flasgger"
+    },
+    "paths": {
+      "/": {
+        "get": {
+          "summary": "Get App",
+          "description": "Get information about the app",
+          "responses": {
+            "200": {
+              "description": "Successful operation"
+            }
+          }
+        }
+      },
+      "/upload/": {
+        "post": {
+          "summary": "Upload File",
+          "description": "Upload a file and process the image",
+          "parameters": [
+            {
+              "name": "file",
+              "in": "formData",
+              "type": "file",
+              "required": true,
+              "description": "Image file (.png, .jpg, .jpeg)"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Image processing results"
+            }
+          }
+        }
+      }
+    }
+  }
+  
