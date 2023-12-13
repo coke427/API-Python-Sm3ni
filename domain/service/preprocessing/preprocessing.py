@@ -338,8 +338,6 @@ import base64
 
 def preprocessing_from_base64(base64_image):
 
-    # Decodificar la imagen en formato base64 a una matriz NumPy
-    # image_data = base64.b64decode(base64_image)
     nparr = np.frombuffer(base64_image, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
